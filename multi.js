@@ -1,39 +1,101 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contact-form');
-    const projectContainer = document.querySelector('.project-container');
-    const leftArrow = document.querySelector('.slider-arrow.left');
-    const rightArrow = document.querySelector('.slider-arrow.right');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
 
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    const navSlide = () => {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
 
-    // Add smooth scrolling for navigation links
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+
+            burger.classList.toggle('toggle');
+        });
+    }
+
+    navSlide();
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
-            navMenu.classList.remove('show');
+
+            const nav = document.querySelector('.nav-links');
+            const burger = document.querySelector('.burger');
+            if (nav.classList.contains('nav-active')) {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+            }
         });
     });
 
-    // Project slider functionality
-    leftArrow.addEventListener('click', () => {
-        projectContainer.scrollBy({ left: -320, behavior: 'smooth' });
+    const projectImages = document.querySelectorAll('.project img');
+    const beepSound = new Audio('path/to/beep-sound.mp3');
+
+    projectImages.forEach(img => {
+        img.addEventListener('mouseenter', function() {
+            beepSound.play();
+            this.style.transform = 'scale(1.05)';
+        });
+
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
     });
 
-    rightArrow.addEventListener('click', () => {
-        projectContainer.scrollBy({ left: 320, behavior: 'smooth' });
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        console.log('Form submitted with data:');
+        for (let [key, value] of formData.entries()) {
+            console.log(key + ': ' + value);
+        }
+
+        // Clear the form
+        this.reset();
+
+        alert('Thank you for your message! I will get back to you soon.');
     });
 
-    // Mobile menu toggle
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.style.backgroundColor = 'rgba(0, 31, 63, 1)';
+        } else {
+            header.style.backgroundColor = 'rgba(0, 31, 63, 0.8)';
+        }
     });
+
+    const skillBars = document.querySelectorAll('.skill-progress');
+    const animateSkills = () => {
+        skillBars.forEach(bar => {
+            const percentage = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = percentage;
+            }, 100);
+        });
+    };
+
+    const skillsSection = document.getElementById('skills');
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            animateSkills();
+            observer.unobserve(skillsSection);
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(skillsSection);
 });

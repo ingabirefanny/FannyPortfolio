@@ -1,109 +1,198 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Fanny-Portfolio</title>
     <link rel="stylesheet" href="multi.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo"> </div>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
         </div>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
+    </header>
+    <main>
+        <section id="home">
+            <div class="background-overlay"></div>
+            <div class="container">
 
-    <div class="content">
-        <div id="home" class="full-height">
-            <div class="home-content glassmorphism">
-                <img src="img/IMG_20221119_171411_380.jpg" alt="Your Name" class="profile-image">
-                <h1>Fanny Ingabire</h1>
-                <p class="tagline">Software Developer </p>
-                <a href="img/cvv.pdf" class="cv-button" download>Download CV</a>
+                <h1> <b style="color: rgb(103, 141, 212);">Hello</b>, I am Fanny Ingabire</h1>
+                <h2> A Software Developer Driven by a passion for innovation and commitment to excellence, 
+                    I transform complex challenges into elegant software solutions that empower and inspire users.</h2>
             </div>
-        </div>
+        </section>
+        <section id="about">
+            <div class="container">
+              <h2>About Me</h2>
+              <div class="about-content">
+                <div class="about-image">
+                  <div class="image-container">
+                    <img src="img/fanny.jpg" alt="Profile picture">
+                  </div>
+                </div>
+                <div class="about-text">
+                  <p>I am a dedicated software developer with a passion for building innovative digital solutions that enhance user experiences. I am focused on creating applications that not only perform efficiently but also provide a compelling and intuitive interface. I thrive on transforming complex challenges into user-friendly and effective solutions.</p>
+                  <a href="img/Fanny Ingabire CV.pdf"><button>Download CV</button></a>
 
-        <div id="about">
-            <h2>About Me</h2>
+                </div>
+              </div>
+            </div>
+          </section>
 
-            <p>
-                As a versatile full-stack developer and UX designer, I bring a comprehensive skill set that spans both frontend and backend development, as well as user-centered design principles. My expertise in JavaScript, HTML/CSS, and React.js allows me to create responsive, high-performance web applications. On the backend, I leverage Django and SQL to build robust, scalable systems.
-                
-                My proficiency extends beyond coding to encompass the entire product development lifecycle. I employ design thinking methodologies, conduct user research, and utilize tools like Figma and Adobe Creative Suite to craft intuitive, aesthetically pleasing interfaces. <br><br>My understanding of mobile app development concepts further enhances my ability to create cohesive cross-platform experiences.
-                
-                I excel in collaborative environments, utilizing version control systems and project management tools to ensure efficient teamwork and project delivery. My grasp of product prioritization techniques and user story mapping enables me to align development efforts with business objectives and user needs, resulting in impactful, user-focused solutions.
-                
-                Would you like me to elaborate on any specific aspect of this personal statement?</p>
-        </div>
-
-        <div id="projects">
-            <h2>My Projects</h2>
-            <div class="project-slider">
-                <button class="slider-arrow left"><i class="fas fa-chevron-left"></i></button>
-                <div class="project-container">
-                    <div class="project-card">
-                        <!-- <h3>Upcycle It</h3> -->
-                        <!-- <p>This project aims to create awareness among second-hand clothes consumers in Kenya about domestic upcycling of old clothes to avoid dumping them in landfills.
-                        </p> -->
-                        <img src="img/Screenshot from 2024-06-11 15-02-35.png" alt="">
+        <section id="skills">
+            <div class="container">
+                <h2 class="ski">Skills</h2>
+                <div class="skills-container">
+                    <div class="skill">
+                        <span class="skill-name">Frontend Development</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
                     </div>
-                    <div class="project-card">
-                        <!-- <h3>Project 2</h3>
-                        <p>Description of project 2</p> -->
-                        <img src="img/Screenshot from 2024-06-11 15-02-35.png" alt="">
-
+                    <div class="skill">
+                        <span class="skill-name">Backend Development</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 68%;"></div>
+                        </div>
+                        <span class="skill-percentage">68%</span>
                     </div>
-                    <div class="project-card">
-                        <!-- <h3>Project 3</h3>
-                        <p>Description of project 3</p> -->
-                        <img src="img/Screenshot from 2024-06-11 15-02-35.png" alt="">
-
+                    <div class="skill">
+                        <span class="skill-name">Mobile Development</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                        <span class="skill-percentage">60%</span>
                     </div>
-                    <div class="project-card">
-                        <!-- <h3>Project 4</h3>
-                        <p>Description of project 4</p> -->
-                        <img src="img/Screenshot from 2024-06-11 15-02-35.png" alt="">
-
+                    <div class="skill">
+                        <span class="skill-name">Data and Software Architecture</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
                     </div>
-                    <div class="project-card">
-                        <!-- <h3>Project 5</h3>
-                        <p>Description of project 5</p> -->
-                        <img src="img/Screenshot from 2024-06-11 15-02-35.png" alt="">
-
+                    <div class="skill">
+                        <span class="skill-name">Product Management</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
                     </div>
-                    <div class="project-card">
-                        <!-- <h3>Project 6</h3>
-                        <p>Description of project 6</p> -->
-                        <img src="img/Screenshot from 2024-06-11 15-02-35.png" alt="">
-
+                    <div class="skill">
+                        <span class="skill-name">UX Research</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">UI/UX Design</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">IOT</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
                     </div>
                 </div>
-                <button class="slider-arrow right"><i class="fas fa-chevron-right"></i></button>
             </div>
-        </div>
+        </section>
 
-        <div id="contact" class="glassmorphism">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div>
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project">
+                        <img src="img/logo.png" alt="Project 1">
+                        <div class="project-info">
+                            <h3>UpcycleIt</h3>
+                            <a href="https://github.com/ingabirefanny/Informational-website.git" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="img/managment-software.png" alt="Project 2">
+                        <div class="project-info">
+                            <h3>School Managemment System</h3>
+                            <a href="#" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="img/next.jpg" alt="Project 3">
+                        <div class="project-info">
+                            <h3>Project 3</h3>
+                            <a href="https://github.com/ingabirefanny/Food-web.git" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="img/alarm.jpeg" alt="Project 4">
+                        <div class="project-info">
+                            <h3>Pomodoro Alarm</h3>
+                            <a href="#" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="img/Tic Tac Toe (1).jpeg" alt="Project 5">
+                        <div class="project-info">
+                            <h3>Tic-Tac-Toe-game</h3>
+                            <a href="https://tic-tac-toe-game-iota-five.vercel.app/" class="btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="img/track.jpeg" alt="Project 6">
+                        <div class="project-info">
+                            <h3>Expense Tracker</h3>
+                            <a href="https://track-expenses-pearl.vercel.app/" class="btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="footer">
-        <p>&copy; 2024 Fanny. All rights reserved.</p>
-    </div>
+        <section id="contact">
+            <div class="container">
+                <h2 class="call">Contact Me</h2>
+                <div class="contact-card">
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/fanny-ingabire-b60a7b2b5/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ingabirefanny" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/IngabireFa451" target="_blank"><i class="fab fa-x"></i></a>
+                <a href="https://www.instagram.com/ingabire___________/?igsh=bWkzYnBoMXllMnFy" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 fanny ingabire. All rights reserved.</p>
+      
+    </footer>
 
     <script src="multi.js"></script>
 </body>
